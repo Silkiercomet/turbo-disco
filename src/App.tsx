@@ -26,7 +26,7 @@ function App() {
   ];
   return (
     <>
-      <StepController />
+      <StepController goToStep={goToStep}/>
       <FormContainer>{formsArray[step]}</FormContainer>
     </>
   );
