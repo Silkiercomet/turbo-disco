@@ -50,12 +50,14 @@ export const useFormSession = () => {
   const [step, setStep] = useState(0);
 
   const goToStep = (number : number) => {
+    console.log(number)
     setStep((prev) => {
         if(number >= 0 && number <= 3){
             return number
         }
         return prev
     });
+
   };
   return {
     order,
