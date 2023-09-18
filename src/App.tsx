@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import StepController from './components/Organisms/StepController'
-import {useFormSession} from './hooks/useFormSession'
+import {UseFormSession, useFormSession} from './hooks/useFormSession'
 import FormContainer from './components/Organisms/FormContainer'
 import Form1 from './components/Molecules/Form1'
 import Form2 from './components/Molecules/Form2'
@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <StepController goToStep={goToStep}/>
-      <FormContainer>{formsArray[step]}</FormContainer>
+      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm}>{formsArray[step]}</FormContainer>
     </>
   );
 }

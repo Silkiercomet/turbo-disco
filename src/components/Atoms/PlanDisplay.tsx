@@ -1,8 +1,19 @@
-import React from 'react'
 
-const PlanDisplay = () => {
+type Props = {
+  image: string,
+  plan: string,
+  cost : number,
+  isYearly : boolean
+}
+const PlanDisplay = ({image, plan, cost, isYearly} : Props) => {
+
+  let price = isYearly ? cost * 10 : cost
   return (
-    <div>PlanDisplay</div>
+    <div>
+      <img src={image} alt={plan} />
+      <p>${price}/yr</p>
+      {isYearly && <p>2 free months</p>}
+    </div>
   )
 }
 

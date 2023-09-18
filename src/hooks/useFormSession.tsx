@@ -40,7 +40,7 @@ export const useFormSession = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm<UserFormData>();
 
   const onSubmitForm = (e : UserFormData) => {
     setOrder((prev) => ({ ...prev, ...e }));
