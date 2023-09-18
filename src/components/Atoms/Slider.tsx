@@ -1,9 +1,19 @@
-import React from 'react'
+type Props = {
+  isYearly: boolean;
+};
 
-const Slider = () => {
+const Slider = ({ isYearly }: Props) => {
   return (
-    <div>Slider</div>
-  )
-}
+    <div className={"switch__container"}>
+      <p className={!isYearly ? "switch__active" : "switch__inactive"}>
+        Monthly
+      </p>
+      <label className={"switch"} htmlFor="sliderY">
+        <span className={"slider"}></span>
+      </label>
+      <p className={isYearly ? "switch__active" : "switch__inactive"}>Yearly</p>
+    </div>
+  );
+};
 
-export default Slider
+export default Slider;

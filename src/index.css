@@ -64,6 +64,9 @@
   #root, #__next {
     isolation: isolate;
   }
+  .none{
+    display: none;
+  }
 /*
 create the full form,
 create an state to manage the part of the form that should be displayed
@@ -146,15 +149,15 @@ you are only able to navigate to sections that already were visited
   border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked + .switch__container .slider {
   background-color: var(--Marineblue);
 }
 
-input:focus + .slider {
+input:focus + .switch__container .slider {
   box-shadow: 0 0 1px var(--Marineblue);
 }
 
-input:checked + .slider:before {
+input:checked + .switch__container .slider:before {
   -webkit-transform: translateX(24px);
   -ms-transform: translateX(24px);
   transform: translateX(24px);
