@@ -18,10 +18,12 @@ function App() {
     step,
     goToStep,
   } = useFormSession();
+  const [isYearly, setOnYearly] = useState<boolean>(order.yearlyBillingCycle)
+  const OnYearly = () => setOnYearly((prev) => (!prev))
   const formsArray = [
     <Form1 order={order} register={register} errors={errors} />,
-    <Form2 order={order} register={register} errors={errors} />,
-    <Form3 order={order} register={register} errors={errors} />,
+    <Form2 order={order} register={register} errors={errors} isYearly={isYearly} OnYearly={OnYearly}/>,
+    <Form3 order={order} register={register} errors={errors} isYearly={isYearly}/>,
     <Form4 order={order} />,
   ];
   return (

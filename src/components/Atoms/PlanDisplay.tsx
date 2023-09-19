@@ -3,7 +3,7 @@ type Props = {
   image: string,
   plan: string,
   cost : number,
-  isYearly : boolean
+  isYearly : boolean | undefined
 }
 const PlanDisplay = ({image, plan, cost, isYearly} : Props) => {
 

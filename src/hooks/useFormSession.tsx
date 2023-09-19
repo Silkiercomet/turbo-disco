@@ -13,7 +13,7 @@ export interface UserFormData {
 export type UseFormSession = {
     order: UserFormData;
     handleSubmit: UseFormHandleSubmit<FieldValues, undefined>;
-    register: UseFormRegister<FieldValues>;
+    register: UseFormRegister<UserFormData>;
     errors: FieldErrors;
     onSubmitForm: (e: UserFormData) => void;
     step: number;
@@ -21,8 +21,10 @@ export type UseFormSession = {
 }
 export type FormsProps = {
     order: UserFormData;
-    register: UseFormRegister<FieldValues>;
+    register: UseFormRegister<UserFormData>;
     errors: FieldErrors<FieldValues>;
+    isYearly?: boolean | undefined,
+    OnYearly?: () => void
   }; 
 export const useFormSession = () => {
   /* order state */
@@ -50,12 +52,12 @@ export const useFormSession = () => {
   const [step, setStep] = useState(0);
 
   const goToStep = (number : number) => {
-    console.log(number)
     setStep((prev) => {
-        if(number >= 0 && number <= 3){
-            return number
+        if(number === 3){
+          handleSubmit(onSubmitForm)
+          console.log(order)
         }
-        return prev
+        return number
     });
 
   };

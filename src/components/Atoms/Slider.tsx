@@ -1,5 +1,5 @@
 type Props = {
-  isYearly: boolean;
+  isYearly: boolean | undefined;
 };
 
 const Slider = ({ isYearly }: Props) => {

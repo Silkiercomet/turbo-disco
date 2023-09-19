@@ -2,7 +2,6 @@ import React from 'react'
 import { FormsProps } from '../../hooks/useFormSession'
 import FormHeader from '../Atoms/FormHeader'
 const Form1 = ({order, register, errors} : FormsProps) => {
-  console.log(order)
   return (
     <>
       <FormHeader title={"Personal info"} subTitle={"Please provide your name, email address, and phone number"}/>
