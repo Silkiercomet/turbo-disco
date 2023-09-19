@@ -1,4 +1,4 @@
-import { SubmitHandler, UseFormHandleSubmit } from "react-hook-form"
+import { FieldValues, SubmitHandler, UseFormHandleSubmit } from "react-hook-form"
 import { UserFormData } from "../../hooks/useFormSession"
 
 type Props ={
