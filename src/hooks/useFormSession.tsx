@@ -52,14 +52,9 @@ export const useFormSession = () => {
   const [step, setStep] = useState(0);
 
   const goToStep = (number : number) => {
-    setStep((prev) => {
-        if(number === 3){
-          handleSubmit(onSubmitForm)
-          console.log(order)
-        }
-        return number
-    });
-
+    if(number >= 0 && number <= 3){
+      setStep(number);
+    }
   };
   return {
     order,
