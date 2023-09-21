@@ -1,12 +1,22 @@
+import { UseFormHandleSubmit } from "react-hook-form"
+import { UserFormData } from "../../hooks/useFormSession"
+
 type Props = {
-  goToStep: (number: number) => void
+  goToStep: (number: number) => void,
+  handleSubmit: UseFormHandleSubmit<UserFormData, undefined>,
+  onSubmitForm: (e: UserFormData) => void
 }
-const StepController = ({goToStep}: Props) => {
+const StepController = ({goToStep,handleSubmit,onSubmitForm}: Props) => {
   const steps = [1,2,3,4]
-  //ask chatgpt why is go to step not a function
+  //cuando se llege al ultimo paso se debe agregar el handlesubmit(callback) y el gotostep
   return (
     <div>
-      {steps.map((e,i) => <button onClick={() => goToStep(i)}>{e}</button>)}
+      {steps.map((e,i) => <button onClick={() => {
+        if(i === 3){
+          handleSubmit(onSubmitForm)
+        }
+        goToStep(i)
+      }}>{e}</button>)}
     </div>
   )
 }

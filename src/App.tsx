@@ -6,6 +6,7 @@ import Form1 from './components/Molecules/Form1'
 import Form2 from './components/Molecules/Form2'
 import Form3 from './components/Molecules/Form3'
 import Form4 from './components/Molecules/Form4'
+import BtnNavigation from './components/Atoms/BtnNavigation'
 
 
 function App() {
@@ -28,8 +29,11 @@ function App() {
   ];
   return (
     <>
-      <StepController goToStep={goToStep}/>
-      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm}>{formsArray[step]}</FormContainer>
+      <StepController goToStep={goToStep} onSubmitForm={onSubmitForm} handleSubmit={handleSubmit}/>
+      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm}>
+        {formsArray[step]}
+        <BtnNavigation goToStep={goToStep} step={step}/>
+        </FormContainer>
     </>
   );
 }
