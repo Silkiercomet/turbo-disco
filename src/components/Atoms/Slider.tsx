@@ -3,6 +3,7 @@ type Props = {
 };
 
 const Slider = ({ isYearly }: Props) => {
+
   return (
     <div className={"switch__container"}>
       <p className={!isYearly ? "switch__active" : "switch__inactive"}>
