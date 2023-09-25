@@ -163,3 +163,13 @@ input:checked + .switch__container .slider:before {
   transform: translateX(24px);
 }
 /* slider */
+
+/* addon */
+
+input:checked + label .addon figure {
+  background-color: black;
+  min-height: 10px;
+  min-width: 10px;
+}
+
+/* addon */

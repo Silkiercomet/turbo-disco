@@ -1,11 +1,53 @@
 import { UserFormData } from "../hooks/useFormSession";
+import iconArcade from "../assets/icon-arcade.svg";
+import iconAdvanced from "../assets/icon-advanced.svg";
+import iconPro from "../assets/icon-pro.svg";
 
-const plans : any = {
+  export const plansArray = [
+    {
+      id: "arcade",
+      img: iconArcade,
+      plan: "Arcade",
+      cost: 9,
+    },
+    {
+      id: "advanced",
+      img: iconAdvanced,
+      plan: "Advanced",
+      cost: 12,
+    },
+    {
+      id: "pro",
+      img: iconPro,
+      plan: "Pro",
+      cost: 15,
+    },
+  ];
+export const addonsArray = [
+    {
+      id: "onlineService",
+      valueTitle: "Online services",
+      subtitle: "Access to multiplayer game",
+      price: 1,
+    },
+    {
+      id: "LargerStorage",
+      valueTitle: "Larger storage",
+      subtitle: "Extra 1TB of cloud save",
+      price: 2,
+    },
+    {
+      id: "CustomProfile",
+      valueTitle: "Customizable profile",
+      subtitle: "Custom theme in your profile",
+      price: 2,
+    },
+  ];
+  const plans : any = {
     arcade : 9,
     advanced : 12,
     pro : 15
   }
-
 export function areAllValuesNotEmpty(obj: Record<string, any>): boolean {
     for (const key in obj) {
       if (obj.hasOwnProperty(key)) {

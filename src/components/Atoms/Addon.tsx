@@ -3,11 +3,10 @@ type Props = {
   title : string,
   subtitle : string,
   price : number,
-  billing : string
 }
-const Addon = ({title, subtitle, price, billing} : Props) => {
+const Addon = ({title, subtitle, price} : Props) => {
   return (
-    <div>
+    <div className="addon">
       <figure>
         <img src={checkmark} alt={title} />
       </figure>
@@ -15,7 +14,7 @@ const Addon = ({title, subtitle, price, billing} : Props) => {
         <p>{title}</p>
         <p>{subtitle}</p>
       </div>
-      <p>+${price}/{billing}</p>
+      <p>+${price}/mo</p>
     </div>
   )
 }

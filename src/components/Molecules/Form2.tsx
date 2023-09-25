@@ -1,52 +1,51 @@
-import { FormsProps } from '../../hooks/useFormSession'
-import FormHeader from '../Atoms/FormHeader'
-import iconArcade from "../../assets/icon-arcade.svg"
-import iconAdvanced from "../../assets/icon-advanced.svg"
-import iconPro from "../../assets/icon-pro.svg"
-import PlanDisplay from '../Atoms/PlanDisplay'
-import Slider from "../Atoms/Slider"
-const Form2 = ({order, register, errors, isYearly, OnYearly} : FormsProps) => {
+import { FormsProps } from "../../hooks/useFormSession";
+import FormHeader from "../Atoms/FormHeader";
+import { plansArray } from "../../utils/utils";
+import PlanDisplay from "../Atoms/PlanDisplay";
+import Slider from "../Atoms/Slider";
 
+const Form2 = ({ order, register, errors, isYearly, OnYearly }: FormsProps) => {
   return (
     <>
-      <FormHeader title={"Select your plan"} subTitle={"You have the option of monthly and yearly billing"}/>
-      <input
-          type="radio"
-          id="arcade"
-          /*checked={fullForm.billing["plan"] === "arcade" ? true : false} close */
-          {...register("selectedPlan", { required: true })}
-          value={"arcade"}
-        />
-      <input
-          type="radio"
-          id="advanced"
-          /*checked={fullForm.billing["plan"] === "advanced" ? true : false} close */
-          {...register("selectedPlan", { required: true })}
-          value={"advanced"}
-        />
-      <input
-          type="radio"
-          id="pro"
-          /*checked={fullForm.billing["plan"] === "pro" ? true : false} close */
-          {...register("selectedPlan", { required: true })}
-          value={"pro"}
-        />
-        <label htmlFor="arcade">
-          <PlanDisplay image={iconArcade} plan='Arcade' cost={9} isYearly={isYearly} />
-        </label>
-        <label htmlFor="advanced">
-          <PlanDisplay image={iconAdvanced} plan='Advanced' cost={12} isYearly={isYearly} />
-        </label>
-        <label htmlFor="pro">
-          <PlanDisplay image={iconPro} plan='Pro' cost={15} isYearly={isYearly} />
-        </label>
+      <FormHeader
+        title={"Select your plan"}
+        subTitle={"You have the option of monthly and yearly billing"}
+      />
+      <ul>
+        {errors.selectedPlan && <p className="error">Please select a plan to continue</p>}
+        {plansArray.map((e) => (
+          <li key={e.id}>
+            <input
+              type="radio"
+              id={e.id}
+              {...register("selectedPlan", { required: true })}
+              value={e.id}
+            />
+            <label htmlFor={e.id}>
+              <PlanDisplay
+                image={e.img}
+                plan={e.plan}
+                cost={e.cost}
+                isYearly={isYearly}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
 
-        <div>
-        <input className="non" type="checkbox" checked={isYearly} {...register("yearlyBillingCycle")} onChange={OnYearly} id="sliderY"/>
+      <div>
+        <input
+          className="none"
+          type="checkbox"
+          checked={isYearly}
+          {...register("yearlyBillingCycle")}
+          onChange={OnYearly}
+          id="sliderY"
+        />
         <Slider isYearly={isYearly} />
-        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Form2
+export default Form2;

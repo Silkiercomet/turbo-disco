@@ -1,28 +1,38 @@
-import React from 'react'
-import { FormsProps } from '../../hooks/useFormSession'
-import FormHeader from '../Atoms/FormHeader'
-import Addon from '../Atoms/Addon'
+import { FormsProps } from "../../hooks/useFormSession";
+import FormHeader from "../Atoms/FormHeader";
+import Addon from "../Atoms/Addon";
+import {addonsArray} from "../../utils/utils"
 
-const Form3 = ({order, register, errors, isYearly} : FormsProps) => {
-  
+const Form3 = ({ order, register, errors, isYearly }: FormsProps) => {
+
   return (
     <>
-    <FormHeader title={"Pick add-ons"} subTitle={"Add-ons help enhance your gaming experience"}/>
-    <input type="checkbox" id="onlineService" value={"Online services"} {...register("selectedAddons")}/>
-    <label htmlFor="onlineService">
-    <Addon title={'Online services'} subtitle={'multiplayer'} billing='mo' price={1}/>
-    </label>
-    <input type="checkbox" id="LargerStorage" value={"Larger storage"} {...register("selectedAddons")}/>
-    <label htmlFor="LargerStorage">
-    <Addon title={'Larger storage'} subtitle={'more space'} price={2} billing='mo'/>
-    </label>
-    <input type="checkbox" id="CustomProfile" value={"Customizable profile"} {...register("selectedAddons")}/>
-    <label htmlFor="CustomProfile">
-    <Addon title={'Larger storage'} subtitle={'more space'} price={2} billing='mo'/>
-    </label>
-
+      <FormHeader
+        title={"Pick add-ons"}
+        subTitle={"Add-ons help enhance your gaming experience"}
+      />
+      <ul>
+        {addonsArray.map((e) => (
+          <li key={e.id}>
+            <input
+              className="none"
+              type="checkbox"
+              id={e.id}
+              value={e.valueTitle}
+              {...register("selectedAddons")}
+            />
+            <label htmlFor={e.id}>
+              <Addon
+                title={e.valueTitle}
+                subtitle={e.subtitle}
+                price={e.price}
+              />
+            </label>
+          </li>
+        ))}
+      </ul>
     </>
-  )
-}
+  );
+};
 
-export default Form3
+export default Form3;
