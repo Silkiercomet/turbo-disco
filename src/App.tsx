@@ -26,7 +26,7 @@ function App() {
     <Form1 order={order} register={register} errors={errors} />,
     <Form2 order={order} register={register} errors={errors} isYearly={isYearly} OnYearly={OnYearly}/>,
     <Form3 order={order} register={register} errors={errors} isYearly={isYearly}/>,
-    <Form4 order={order} />,
+    <Form4 order={order} errors={errors} />,
   ];
   return (
     <>
