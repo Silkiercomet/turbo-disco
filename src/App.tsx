@@ -23,16 +23,20 @@ function App() {
   const [isYearly, setOnYearly] = useState<boolean>(order.yearlyBillingCycle)
   const OnYearly = () => setOnYearly((prev) => (!prev))
   const formsArray = [
-    <Form1 order={order} register={register} errors={errors} />,
-    <Form2 order={order} register={register} errors={errors} isYearly={isYearly} OnYearly={OnYearly}/>,
-    <Form3 order={order} register={register} errors={errors} isYearly={isYearly}/>,
-    <Form4 order={order} errors={errors} />,
+    <Form1 order={order} register={register} errors={errors} step={step}/>,
+    <Form2 order={order} register={register} errors={errors} isYearly={isYearly} OnYearly={OnYearly} step={step}/>,
+    <Form3 order={order} register={register} errors={errors} isYearly={isYearly} step={step}/>,
+    <Form4 order={order} errors={errors} step={step}/>
   ];
+
   return (
     <>
       <StepController goToStep={goToStep} onSubmitForm={onSubmitForm} handleSubmit={handleSubmit}/>
-      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm}>
-        {formsArray[step]}
+      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm} step={step}>
+        {formsArray[0]}
+        {formsArray[1]}
+        {formsArray[2]}
+        {formsArray[3]}
         <BtnNavigation goToStep={goToStep} step={step}/>
         </FormContainer>
     </>

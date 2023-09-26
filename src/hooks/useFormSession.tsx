@@ -24,6 +24,7 @@ export type FormsProps = {
     register: UseFormRegister<UserFormData>;
     errors: FieldErrors<FieldValues>;
     isYearly?: boolean | undefined,
+    step?: number,
     OnYearly?: () => void
   }; 
 export const useFormSession = () => {
