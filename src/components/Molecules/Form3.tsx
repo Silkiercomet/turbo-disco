@@ -1,12 +1,11 @@
 import { FormsProps } from "../../hooks/useFormSession";
 import FormHeader from "../Atoms/FormHeader";
 import Addon from "../Atoms/Addon";
-import {addonsArray} from "../../utils/utils"
+import { addonsArray } from "../../utils/utils";
 
-const Form3 = ({ order, register, errors, isYearly }: FormsProps) => {
-
+const Form3 = ({ order, register, errors, isYearly, step }: FormsProps) => {
   return (
-    <>
+    <div className={`form ${step === 2 ? "visible" : "invisible"}`}>
       <FormHeader
         title={"Pick add-ons"}
         subTitle={"Add-ons help enhance your gaming experience"}
@@ -31,7 +30,7 @@ const Form3 = ({ order, register, errors, isYearly }: FormsProps) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

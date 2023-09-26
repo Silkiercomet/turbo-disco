@@ -4,15 +4,24 @@ import { plansArray } from "../../utils/utils";
 import PlanDisplay from "../Atoms/PlanDisplay";
 import Slider from "../Atoms/Slider";
 
-const Form2 = ({ order, register, errors, isYearly, OnYearly }: FormsProps) => {
+const Form2 = ({
+  order,
+  register,
+  errors,
+  isYearly,
+  OnYearly,
+  step,
+}: FormsProps) => {
   return (
-    <>
+    <div className={`form ${step === 1 ? "visible" : "invisible"}`}>
       <FormHeader
         title={"Select your plan"}
         subTitle={"You have the option of monthly and yearly billing"}
       />
       <ul>
-        {errors.selectedPlan && <p className="error">Please select a plan to continue</p>}
+        {errors.selectedPlan && (
+          <p className="error">Please select a plan to continue</p>
+        )}
         {plansArray.map((e) => (
           <li key={e.id}>
             <input
@@ -44,7 +53,7 @@ const Form2 = ({ order, register, errors, isYearly, OnYearly }: FormsProps) => {
         />
         <Slider isYearly={isYearly} />
       </div>
-    </>
+    </div>
   );
 };
 

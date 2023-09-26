@@ -9,13 +9,18 @@ import FormHeader from "../Atoms/FormHeader";
 type Props = {
   order: UserFormData;
   errors: FieldErrors;
+  step: number;
 };
 // todos los form deben estar presentes para poder usar el objeto errors
 // de lo contrario la autenticacion de errores tendra que hacerse manualmente
-const Form4 = ({ order, errors }: Props) => {
+const Form4 = ({ order, errors, step }: Props) => {
   if (!areAllValuesNotEmpty(order)) {
-    console.log(errors.phoneNumber, 2);
-    return <h1>please complete the form, before getting to this step</h1>;
+    console.log(errors, 2);
+    return (
+      <h1 className={`form ${step === 3 ? "visible" : "invisible"}`}>
+        please complete the form, before getting to this step
+      </h1>
+    );
   }
   let totalPlan = 0,
     monthlyCycle = order.yearlyBillingCycle ? "yr" : "mo";
@@ -24,7 +29,7 @@ const Form4 = ({ order, errors }: Props) => {
   }
 
   return (
-    <>
+    <div className={`form ${step === 3 ? "visible" : "invisible"}`}>
       <FormHeader
         title="Finishing up"
         subTitle="Double-check everything looks OK before confirming"
@@ -58,7 +63,7 @@ const Form4 = ({ order, errors }: Props) => {
           </span>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 
