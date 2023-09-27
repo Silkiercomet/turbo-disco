@@ -1,6 +1,6 @@
 import { UseFormHandleSubmit } from "react-hook-form"
 import { UserFormData } from "../../hooks/useFormSession"
-
+import styles from "../styles/stepcontroller.module.css"
 type Props = {
   goToStep: (number: number) => void,
   handleSubmit: UseFormHandleSubmit<UserFormData, undefined>,
@@ -11,7 +11,7 @@ const StepController = ({goToStep,handleSubmit,onSubmitForm}: Props) => {
   //cuando se llege al ultimo paso se debe agregar el handlesubmit(callback) y el gotostep
 
   return (
-    <div>
+    <div className={styles.container}>
       {steps.map((e,i) => i === 3 ?
       <button onClick={() => {
         handleSubmit(onSubmitForm)()

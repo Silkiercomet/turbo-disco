@@ -1,0 +1,31 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+.container > *:not(.back) {
+    padding: 10px;
+
+    background-color: var(--Marineblue);
+    color: var(--Alabaster);
+    border-radius: 5px;
+    border: 1px solid var(--Marineblue);
+    cursor: pointer;
+}
+
+.back{
+    padding: 10px;
+
+    background-color: transparent;
+    color: var(--Coolgray);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+.back:hover{
+    border-color: var(--Coolgray);
+
+}
