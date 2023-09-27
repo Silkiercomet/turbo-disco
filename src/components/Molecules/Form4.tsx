@@ -10,16 +10,30 @@ type Props = {
   order: UserFormData;
   errors: FieldErrors;
   step: number;
+  goToStep: (number: number) => void
 };
-// todos los form deben estar presentes para poder usar el objeto errors
-// de lo contrario la autenticacion de errores tendra que hacerse manualmente
-const Form4 = ({ order, errors, step }: Props) => {
+// solo cargar todas las forms cuando se llege al step 4
+
+const Form4 = ({ order, errors, step, goToStep }: Props) => {
   if (!areAllValuesNotEmpty(order)) {
-    console.log(errors, 2);
-    return (
+      let errorsArray: string[] = []
+      for(const error in errors){
+        errorsArray.push(`${errors[error]?.message}`)
+      }
+      function handleError(message : string){
+        if(message === "Select a plan is required"){
+          return <button onClick={() => goToStep(1)}>go to problem</button>
+        }
+        return <button onClick={() => goToStep(0)}>go to problem</button>
+      }
+    return (<>
       <h1 className={`form ${step === 3 ? "visible" : "invisible"}`}>
         please complete the form, before getting to this step
       </h1>
+      <ul>
+        {errorsArray.map((e, i) => <li key={i}>{e}{handleError(e)}</li>)}
+      </ul>
+      </>
     );
   }
   let totalPlan = 0,
@@ -38,7 +52,7 @@ const Form4 = ({ order, errors, step }: Props) => {
         <li>
           <div>
             <span>{order.selectedPlan}</span>
-            <a href="#">Change</a>
+            <button onClick={() => goToStep(1)}>Change</button>
           </div>{" "}
           <span>
             ${planPrice(order)}/{monthlyCycle}

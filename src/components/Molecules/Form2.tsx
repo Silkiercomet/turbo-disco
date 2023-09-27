@@ -27,7 +27,8 @@ const Form2 = ({
             <input
               type="radio"
               id={e.id}
-              {...register("selectedPlan", { required: true })}
+              className="none"
+              {...register("selectedPlan", { required: "Select a plan is required." })}
               value={e.id}
             />
             <label htmlFor={e.id}>

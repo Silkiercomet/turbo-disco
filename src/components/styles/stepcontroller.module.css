@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    min-height: 155px;
+    padding: 25px;
+    gap: 10px;
+    background-image: url(../../assets/bg-sidebar-mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container > button {
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+    border: 1px solid var(--Alabaster);
+    color: var(--Alabaster);
+
+    text-align: center;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+}
+.container > button:hover {
+    background-color: var(--Lightblue);
+    border-color: var(--Lightblue);
+    color: var(--Purplishblue);
+
+}
