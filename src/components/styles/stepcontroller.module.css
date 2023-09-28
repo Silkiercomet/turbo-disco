@@ -28,7 +28,7 @@
     cursor: pointer;
     transition: 300ms ease-in-out;
 }
-.container > button:hover {
+.container > button:hover, .container button.active {
     background-color: var(--Lightblue);
     border-color: var(--Lightblue);
     color: var(--Purplishblue);

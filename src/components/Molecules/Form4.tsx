@@ -6,6 +6,7 @@ import {
   areAllValuesNotEmpty,
 } from "../../utils/utils";
 import FormHeader from "../Atoms/FormHeader";
+import FailureForm from "./FailureForm";
 type Props = {
   order: UserFormData;
   errors: FieldErrors;
@@ -15,27 +16,11 @@ type Props = {
 // solo cargar todas las forms cuando se llege al step 4
 
 const Form4 = ({ order, errors, step, goToStep }: Props) => {
+  console.log(order)
   if (!areAllValuesNotEmpty(order)) {
-      let errorsArray: string[] = []
-      for(const error in errors){
-        errorsArray.push(`${errors[error]?.message}`)
-      }
-      function handleError(message : string){
-        if(message === "Select a plan is required"){
-          return <button onClick={() => goToStep(1)}>go to problem</button>
-        }
-        return <button onClick={() => goToStep(0)}>go to problem</button>
-      }
-    return (<>
-      <h1 className={`form ${step === 3 ? "visible" : "invisible"}`}>
-        please complete the form, before getting to this step
-      </h1>
-      <ul>
-        {errorsArray.map((e, i) => <li key={i}>{e}{handleError(e)}</li>)}
-      </ul>
-      </>
-    );
+    return <FailureForm errors={errors} goToStep={goToStep} step={step} />
   }
+
   let totalPlan = 0,
     monthlyCycle = order.yearlyBillingCycle ? "yr" : "mo";
   if (order.selectedPlan) {

@@ -27,5 +27,8 @@
 }
 .back:hover{
     border-color: var(--Coolgray);
-
 }
+.left{
+    margin-left: auto;
+}
+/* need to add the mobile layout and absolute container postioned in the bottom*/

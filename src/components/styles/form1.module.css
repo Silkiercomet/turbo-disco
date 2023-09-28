@@ -1,0 +1,16 @@
+.input__text{
+padding: 8px 10px;
+margin-bottom: 10px;
+
+background-color: transparent;
+border-radius: 5px;
+
+border: 1px solid var(--Coolgray);
+}
+.input__text:focus{
+    border: 1px solid var(--Marineblue);
+}
+.label{
+    color: var(--Marineblue);
+    font-weight: 500;
+}

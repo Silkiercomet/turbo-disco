@@ -16,7 +16,7 @@ const Form2 = ({
     <div className={`form ${step === 1 ? "visible" : "invisible"}`}>
       <FormHeader
         title={"Select your plan"}
-        subTitle={"You have the option of monthly and yearly billing"}
+        subTitle={"You have the option of monthly or yearly billing"}
       />
       <ul>
         {errors.selectedPlan && (
@@ -45,14 +45,16 @@ const Form2 = ({
 
       <div>
         <input
-          className="none"
+          className="sliderinput"
           type="checkbox"
           checked={isYearly}
           {...register("yearlyBillingCycle")}
           onChange={OnYearly}
           id="sliderY"
         />
+
         <Slider isYearly={isYearly} />
+
       </div>
     </div>
   );

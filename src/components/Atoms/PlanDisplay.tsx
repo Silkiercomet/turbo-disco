@@ -11,7 +11,7 @@ const PlanDisplay = ({image, plan, cost, isYearly} : Props) => {
   return (
     <div>
       <img src={image} alt={plan} />
-      <p>${price}/yr</p>
+      <p><span>{plan}</span><span>${price}/yr</span></p>
       {isYearly && <p>2 free months</p>}
     </div>
   )

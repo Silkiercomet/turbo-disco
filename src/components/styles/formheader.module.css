@@ -1,0 +1,17 @@
+.header{
+    margin-bottom: 25px;
+}
+.header h1{
+    color: var(--Marineblue);
+    margin-bottom: 5px;
+}
+.header p{
+    color: var(--Coolgray);
+    font-size: 1.16rem;
+}
+
+@media screen and (max-width:600px) {
+    .header p{
+        max-width: 30ch;
+    }
+}

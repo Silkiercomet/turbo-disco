@@ -84,6 +84,9 @@ h6 {
 .none {
   display: none;
 }
+.error{
+  color: var(--Strawberryred);
+}
 /*
 create the full form,
 create an state to manage the part of the form that should be displayed
@@ -102,6 +105,11 @@ you are only able to navigate to sections that already were visited
 }
 
 /* slider */
+.sliderinput{
+height: 0;
+width: 0;
+
+}
 .switch__container {
   display: flex;
   justify-content: space-between;
@@ -196,7 +204,8 @@ input:checked + label .addon figure {
 
 .form {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   transition: 300ms ease-out;
   opacity: 1;
 }
