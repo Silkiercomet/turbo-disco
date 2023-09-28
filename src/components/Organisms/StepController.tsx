@@ -5,20 +5,21 @@ type Props = {
   goToStep: (number: number) => void,
   handleSubmit: UseFormHandleSubmit<UserFormData, undefined>,
   onSubmitForm: (e: UserFormData) => void,
+  step: number
 }
-const StepController = ({goToStep,handleSubmit,onSubmitForm}: Props) => {
+const StepController = ({goToStep,handleSubmit,onSubmitForm, step}: Props) => {
   const steps = [1,2,3,4]
   //cuando se llege al ultimo paso se debe agregar el handlesubmit(callback) y el gotostep
 
   return (
     <div className={styles.container}>
       {steps.map((e,i) => i === 3 ?
-      <button onClick={() => {
+      <button className={i === step ? `${styles.active}` : ""} onClick={() => {
         handleSubmit(onSubmitForm)()
         goToStep(i)
       }}>{e}</button>
       :
-      <button onClick={() => {
+      <button className={i === step ? `${styles.active}` : ""} onClick={() => {
         goToStep(i)
       }}>{e}</button>)}
     </div>

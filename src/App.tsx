@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <StepController goToStep={goToStep} onSubmitForm={onSubmitForm} handleSubmit={handleSubmit}/>
+      <StepController step={step} goToStep={goToStep} onSubmitForm={onSubmitForm} handleSubmit={handleSubmit}/>
       <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm} step={step}>
         {formsArray[0]}
         {formsArray[1]}

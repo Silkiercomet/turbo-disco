@@ -1,3 +1,4 @@
+import styles from "../styles/formheader.module.css"
 type Props = {
   title : string,
   subTitle : string
@@ -5,10 +6,10 @@ type Props = {
 
 const FormHeader = ({title, subTitle} : Props) => {
   return (
-    <div>
+    <header className={styles.header}>
       <h1>{title}</h1>
       <p>{subTitle}</p>
-    </div>
+    </header>
   )
 }
 
