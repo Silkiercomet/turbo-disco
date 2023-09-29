@@ -1,0 +1,50 @@
+.addon__container{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    cursor: pointer;
+    box-shadow:
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.012),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.018),
+    100px 100px 80px rgba(0, 0, 0, 0.03)
+  ;
+  border: 1px solid var(--Lightgray);
+  border-radius: 5px;
+  transition: 300ms ease-in-out;
+  cursor: pointer;
+}
+.addon__container:hover{
+    border-color: var(--Purplishblue);
+}
+.addon__container_price{
+    margin-left: auto;
+    color: var(--Purplishblue);
+    font-weight: 500;
+}
+.addon__container_img {
+    min-height: 25px;
+    min-width: 25px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--Purplishblue);
+    border-radius: 5px;
+}
+.addon__container_img img{
+    margin: auto;
+    width: 70%;
+    height: 70%;
+}
+.addon__container_info{
+    padding-left: 15px;
+}
+.addon__container_info p:first-child{
+    font-weight: 500;
+    color: var(--Marineblue);
+    font-size: 1.15rem;
+}
+.addon__container_info p:last-child{
+
+    color: var(--Coolgray);
+
+}

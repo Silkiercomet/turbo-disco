@@ -18,7 +18,7 @@ const Form2 = ({
         title={"Select your plan"}
         subTitle={"You have the option of monthly or yearly billing"}
       />
-      <ul>
+      <ul className="plan__list">
         {errors.selectedPlan && (
           <p className="error">Please select a plan to continue</p>
         )}
@@ -27,7 +27,7 @@ const Form2 = ({
             <input
               type="radio"
               id={e.id}
-              className="none"
+              className="none plan__input"
               {...register("selectedPlan", { required: "Select a plan is required." })}
               value={e.id}
             />

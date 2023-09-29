@@ -37,8 +37,9 @@ function App() {
         {formsArray[1]}
         {formsArray[2]}
         {formsArray[3]}
-        <BtnNavigation goToStep={goToStep} step={step}/>
+        <BtnNavigation goToStep={goToStep} step={step} screen="desktop"/>
         </FormContainer>
+        <BtnNavigation goToStep={goToStep} step={step} screen="mobile"/>
     </>
   );
 }

@@ -10,11 +10,11 @@ const Form3 = ({ order, register, errors, isYearly, step }: FormsProps) => {
         title={"Pick add-ons"}
         subTitle={"Add-ons help enhance your gaming experience"}
       />
-      <ul>
+      <ul className="addon__list">
         {addonsArray.map((e) => (
           <li key={e.id}>
             <input
-              className="none"
+              className="none addon__input"
               type="checkbox"
               id={e.id}
               value={e.valueTitle}
