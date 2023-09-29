@@ -1,6 +1,14 @@
+.desktop {
+    display: none;
+}
+.mobile{
+    display: flex;
+    max-width: 90%;
+    margin-inline: auto;
+    padding-bottom: 15px;
+}
 .container{
     width: 100%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 15px;
@@ -31,4 +39,14 @@
 .left{
     margin-left: auto;
 }
+
 /* need to add the mobile layout and absolute container postioned in the bottom*/
+
+@media screen and (min-width:700px) {
+    .desktop{
+        display: flex;
+    }
+    .mobile{
+        display: none;
+    }
+}

@@ -1,0 +1,46 @@
+.form__list li:first-child{
+    border-bottom: 1px solid var(--Lightgray);
+    margin-bottom: 10px;
+}
+.form__list li:first-child div{
+    display: flex;
+    flex-direction: column
+}
+.form__list li:first-child div span, .form__list li:first-child .price, .total .price{
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--Marineblue);
+}
+.total .price{
+    color: var(--Purplishblue);
+}
+.form__list li:first-child div button{
+    border: none;
+    background-color: transparent;
+    color: var(--Coolgray);
+    border-bottom: 1px solid var(--Coolgray);
+    padding: 0;
+    max-width: 6ch;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+}
+.form__list li:first-child div button:hover{
+
+    color: var(--Marineblue);
+    border-bottom: 1px solid var(--Marineblue);
+
+}
+.form__list > li{
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+
+    color: var(--Coolgray);
+}
+.price{
+    margin-left: auto;
+    color: var(--Marineblue);
+}
+.total{
+    margin-top: 15px;
+}

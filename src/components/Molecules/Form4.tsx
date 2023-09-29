@@ -7,6 +7,8 @@ import {
 } from "../../utils/utils";
 import FormHeader from "../Atoms/FormHeader";
 import FailureForm from "./FailureForm";
+import styles from "../styles/form4.module.css"
+
 type Props = {
   order: UserFormData;
   errors: FieldErrors;
@@ -16,7 +18,7 @@ type Props = {
 // solo cargar todas las forms cuando se llege al step 4
 
 const Form4 = ({ order, errors, step, goToStep }: Props) => {
-  console.log(order)
+
   if (!areAllValuesNotEmpty(order)) {
     return <FailureForm errors={errors} goToStep={goToStep} step={step} />
   }
@@ -33,13 +35,13 @@ const Form4 = ({ order, errors, step, goToStep }: Props) => {
         title="Finishing up"
         subTitle="Double-check everything looks OK before confirming"
       />
-      <ul>
+      <ul className={styles.form__list}>
         <li>
           <div>
-            <span>{order.selectedPlan}</span>
+            <span>{order.selectedPlan} ({monthlyCycle === "yr" ? "Yearly" : "Monthly"})</span>
             <button onClick={() => goToStep(1)}>Change</button>
-          </div>{" "}
-          <span>
+          </div>
+          <span className={styles.price}>
             ${planPrice(order)}/{monthlyCycle}
           </span>
         </li>
@@ -50,14 +52,15 @@ const Form4 = ({ order, errors, step, goToStep }: Props) => {
             return (
               <li key={i}>
                 <p>
-                  {e} price : +${addonValue}/{monthlyCycle}
+                  {e} 
                 </p>
+                <span className={styles.price}>+${addonValue}/{monthlyCycle}</span>
               </li>
             );
           })}
-        <li>
+        <li className={styles.total}>
           <span>Total (per {monthlyCycle === "yr" ? "year" : "month"})</span>
-          <span>
+          <span className={styles.price}>
             +${totalPlan}/{monthlyCycle}
           </span>
         </li>

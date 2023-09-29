@@ -87,6 +87,10 @@ h6 {
 .error{
   color: var(--Strawberryred);
 }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 /*
 create the full form,
 create an state to manage the part of the form that should be displayed
@@ -184,10 +188,14 @@ input:checked + .switch__container .slider:before {
 
 /* addon */
 
-input:checked + label .addon figure {
-  background-color: black;
-  min-height: 10px;
-  min-width: 10px;
+.addon__list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.addon__input:checked + label div figure {
+  background-color: var(--Purplishblue);
 }
 
 /* addon */
@@ -218,3 +226,17 @@ input:checked + label .addon figure {
 }
 
 /* form show state */
+
+/* plan list */
+
+.plan__list{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.plan__input:checked + label div, .addon__input:checked + label div{
+  border-color: var(--Purplishblue);
+}
+
+/* plan list */
+
