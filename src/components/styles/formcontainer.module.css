@@ -16,3 +16,15 @@
 
 transform: translateY(-65px);
 }
+
+@media screen and (min-width:700px) {
+  .container{
+    position: relative;
+    transform: translateY(0);
+    max-width: 600px;
+    min-height: 580px;
+    max-height: 580px;
+    margin-inline: 1.5rem;
+    padding-inline: 75px;
+  }
+}

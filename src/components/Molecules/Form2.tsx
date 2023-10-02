@@ -18,17 +18,19 @@ const Form2 = ({
         title={"Select your plan"}
         subTitle={"You have the option of monthly or yearly billing"}
       />
+      {errors.selectedPlan && (
+        <p className="error">Please select a plan to continue</p>
+      )}
       <ul className="plan__list">
-        {errors.selectedPlan && (
-          <p className="error">Please select a plan to continue</p>
-        )}
         {plansArray.map((e) => (
           <li key={e.id}>
             <input
               type="radio"
               id={e.id}
               className="none plan__input"
-              {...register("selectedPlan", { required: "Select a plan is required." })}
+              {...register("selectedPlan", {
+                required: "Select a plan is required.",
+              })}
               value={e.id}
             />
             <label htmlFor={e.id}>
@@ -54,7 +56,6 @@ const Form2 = ({
         />
 
         <Slider isYearly={isYearly} />
-
       </div>
     </div>
   );

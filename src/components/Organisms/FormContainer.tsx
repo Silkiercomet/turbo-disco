@@ -1,19 +1,13 @@
-import { SubmitHandler, UseFormHandleSubmit } from "react-hook-form";
-import { UserFormData } from "../../hooks/useFormSession";
 import { useEffect, useRef } from "react";
 import styles from "../styles/formcontainer.module.css"
 type Props = {
   children: JSX.Element | JSX.Element[] | string;
-  handleSubmit: UseFormHandleSubmit<UserFormData>;
-  onSubmitForm: SubmitHandler<UserFormData>;
   step: number;
 };
 
 
 const FormContainer = ({
   children,
-  handleSubmit,
-  onSubmitForm,
   step,
 }: Props) => {
 
@@ -33,7 +27,6 @@ const FormContainer = ({
   return (
     <main className={styles.container}>
       <form
-        onSubmit={handleSubmit(onSubmitForm)}
         ref={formContainerRef}
         className={`form__container`}
       >
