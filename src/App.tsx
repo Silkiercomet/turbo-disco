@@ -12,10 +12,8 @@ import BtnNavigation from './components/Atoms/BtnNavigation'
 function App() {
   const {
     order,
-    handleSubmit,
     register,
     errors,
-    onSubmitForm,
     step,
     goToStep,
   } = useFormSession();
@@ -31,8 +29,8 @@ function App() {
 
   return (
     <>
-      <StepController step={step} goToStep={goToStep} onSubmitForm={onSubmitForm} handleSubmit={handleSubmit}/>
-      <FormContainer handleSubmit={handleSubmit} onSubmitForm={onSubmitForm} step={step}>
+      <StepController step={step} goToStep={goToStep} />
+      <FormContainer step={step}>
         {formsArray[0]}
         {formsArray[1]}
         {formsArray[2]}

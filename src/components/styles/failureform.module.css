@@ -1,0 +1,18 @@
+.failure {
+  color: var(--Marineblue);
+}
+.errors__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  color: var(--Strawberryred);
+  margin-top: 1rem;
+}
+.errors__list_btn {
+  padding-left: 10px;
+  text-decoration: underline;
+  font-weight: 500;
+
+  cursor: pointer;
+}

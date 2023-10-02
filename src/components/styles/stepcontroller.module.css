@@ -1,3 +1,6 @@
+.desktop{
+    display: none;
+}
 .container{
     display: flex;
     justify-content: center;
@@ -13,7 +16,7 @@
     background-size: cover;
 }
 
-.container > button {
+.container > div button {
     background-color: transparent;
     height: 40px;
     width: 40px;
@@ -33,4 +36,38 @@
     border-color: var(--Lightblue);
     color: var(--Purplishblue);
 
+}
+
+@media screen and (min-width:700px) {
+    .desktop{
+        display: block;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: flex-start;
+        max-width: 300px;
+        min-height: 580px;
+        max-height: 580px;
+        padding-left: 2.5rem;
+        padding-top: 2.5rem;
+        gap: 1rem;
+
+        background-image: url(../../assets/bg-sidebar-desktop.svg);
+        background-size: contain;
+    }
+    .container > div{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .desktop p:first-child{
+        color: var(--Coolgray);
+        font-weight: 500;
+    }
+    .desktop p:last-child{
+        color: var(--Lightgray);
+        font-weight: 500;
+
+        text-transform: uppercase;
+    }
 }
