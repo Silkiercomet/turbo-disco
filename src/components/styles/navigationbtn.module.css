@@ -14,7 +14,7 @@
     padding-top: 15px;
 }
 .container > *:not(.back) {
-    padding: 10px;
+    padding: 8px 20px;
 
     background-color: var(--Marineblue);
     color: var(--Alabaster);
@@ -24,7 +24,7 @@
 }
 
 .back{
-    padding: 10px;
+    padding: 8px 20px;
 
     background-color: transparent;
     color: var(--Coolgray);
@@ -38,6 +38,9 @@
 }
 .left{
     margin-left: auto;
+}
+.finalbtn{
+    background-color: var(--Purplishblue) !important;
 }
 
 /* need to add the mobile layout and absolute container postioned in the bottom*/
