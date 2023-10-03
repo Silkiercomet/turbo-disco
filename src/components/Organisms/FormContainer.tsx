@@ -1,14 +1,17 @@
 import { useEffect, useRef } from "react";
 import styles from "../styles/formcontainer.module.css"
+import Success from "./Success";
 type Props = {
   children: JSX.Element | JSX.Element[] | string;
   step: number;
+  success: boolean;
 };
 
 
 const FormContainer = ({
   children,
   step,
+  success
 }: Props) => {
 
   const formContainerRef = useRef<any>(null);
@@ -24,6 +27,11 @@ const FormContainer = ({
     }
   }, [step]);
 
+  if(success){
+    return     <main className={`${styles.container} ${styles.final}`}>
+      <Success />
+    </main>
+  }
   return (
     <main className={styles.container}>
       <form

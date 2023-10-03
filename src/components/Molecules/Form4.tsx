@@ -18,7 +18,7 @@ type Props = {
 // solo cargar todas las forms cuando se llege al step 4
 
 const Form4 = ({ order, errors, step, goToStep }: Props) => {
-
+  console.log(errors.email)
   if (!areAllValuesNotEmpty(order)) {
     return <FailureForm errors={errors} goToStep={goToStep} step={step} />
   }
