@@ -1,4 +1,4 @@
-import { FormsProps, UserFormData } from "../../hooks/useFormSession";
+import { UserFormData } from "../../hooks/useFormSession";
 import FormHeader from "../Atoms/FormHeader";
 import { plansArray } from "../../utils/utils";
 import PlanDisplay from "../Atoms/PlanDisplay";
