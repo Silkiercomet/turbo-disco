@@ -1,9 +1,15 @@
-import { FormsProps } from "../../hooks/useFormSession";
+import { UserFormData } from "../../hooks/useFormSession";
 import FormHeader from "../Atoms/FormHeader";
 import Addon from "../Atoms/Addon";
 import { addonsArray } from "../../utils/utils";
+import { UseFormRegister } from "react-hook-form";
 
-const Form3 = ({ order, register, errors, isYearly, step }: FormsProps) => {
+type Props = {
+  register: UseFormRegister<UserFormData>,
+  step: number
+}
+
+const Form3 = ({ register, step }: Props) => {
   return (
     <div className={`form ${step === 2 ? "visible" : "invisible"}`}>
       <FormHeader

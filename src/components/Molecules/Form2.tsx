@@ -1,17 +1,25 @@
-import { FormsProps } from "../../hooks/useFormSession";
+import { UserFormData } from "../../hooks/useFormSession";
 import FormHeader from "../Atoms/FormHeader";
 import { plansArray } from "../../utils/utils";
 import PlanDisplay from "../Atoms/PlanDisplay";
 import Slider from "../Atoms/Slider";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+
+type Props = {
+  register: UseFormRegister<UserFormData>;
+  errors: FieldErrors<FieldValues>;
+  isYearly?: boolean | undefined;
+  step?: number;
+  OnYearly?: () => void;
+}
 
 const Form2 = ({
-  order,
   register,
   errors,
   isYearly,
   OnYearly,
   step,
-}: FormsProps) => {
+}: Props) => {
   return (
     <div className={`form ${step === 1 ? "visible" : "invisible"}`}>
       <FormHeader
